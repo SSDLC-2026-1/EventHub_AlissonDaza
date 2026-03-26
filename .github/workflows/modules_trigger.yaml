@@ -1,0 +1,37 @@
+name: Generate zip files by modules
+
+on:
+  workflow_dispatch:
+    inputs:
+      module:
+        description: 'Selecciona la opción del módulo a ejecutar'
+        required: true
+        type: choice
+        options:
+          - frontend
+          - backend
+          - data
+          - full 
+
+jobs:
+  generate-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: General
+        run: echo "Workflow manual"
+
+      - name: Frentefin
+        if: inputs.module == 'frontend'
+        run: echo "Ejecutando módulo de frontend"
+
+      - name: Atras
+        if: inputs.module == 'backend'
+        run: echo "Ejecutando módulo de backend"
+
+      - name: Datos
+        if: inputs.module == 'data'
+        run: echo "Ejecutando módulo de data"
+      
+      - name: Completo
+        if: inputs.module == 'full'
+        run: echo "Ejecutando todos los módulos"
