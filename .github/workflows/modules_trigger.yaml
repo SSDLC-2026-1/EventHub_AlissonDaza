@@ -24,7 +24,7 @@ jobs:
         if: inputs.module == 'frontend'
         run: echo "Ejecutando módulo de frontend"
 
-      - name: Atras
+      - name: Atrasfin
         if: inputs.module == 'backend'
         run: echo "Ejecutando módulo de backend"
 
